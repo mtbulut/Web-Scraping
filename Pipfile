@@ -14,6 +14,8 @@ splinter = "*"
 selenium = "*"
 html5lib = "*"
 lxml = "*"
+ipython = "*"
+nbconvert = "*"
 
 [requires]
 python_version = "3.7"
