@@ -162,6 +162,18 @@ for i in range(len(image_url)):
 Hemisphere_image_url    
 
 
+all_mars_data = {
+    "Latest News Title" : latest_title,
+    "Latest Paragraph" : latest_paragraph, 
+    " Featured Image" : all_mars_image_url,
+    " Mars Weather": mars_weather,
+    "Mars Facts": Mars_Facts_df,
+    "Hemisphares Pages": Hemisphere_image_url
+
+}
+
+
+
 # In[15]:
 
 
