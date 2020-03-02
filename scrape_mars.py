@@ -32,7 +32,7 @@ soup = BeautifulSoup(html_text, "html.parser")
 latest_title = soup.find("div", class_="content_title").text
 print(f'The latest Title: {latest_title}')
 
-latest_paragraph = soup.find("div", class_="article_teaser_body").text
+latest_paragraph = soup.find("div", class_="article_teaser_body")
 print(f'The latest paragraph: {latest_paragraph}')
 
 
@@ -161,6 +161,7 @@ for i in range(len(image_url)):
     Hemisphere_image_url.append(hemi_dict)
 Hemisphere_image_url    
 
+print('=======================================================')
 
 all_mars_data = {
     "Latest News Title" : latest_title,
@@ -172,6 +173,7 @@ all_mars_data = {
 
 }
 
+print(all_mars_data)
 
 
 # In[15]:
