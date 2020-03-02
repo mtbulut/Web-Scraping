@@ -16,6 +16,8 @@ html5lib = "*"
 lxml = "*"
 ipython = "*"
 nbconvert = "*"
+flask = "*"
+pymongo = "*"
 
 [requires]
 python_version = "3.7"
