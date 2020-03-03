@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "780d7325a5c795485821f20a5f0a2c5e279582315c0d3741a5a7da72f48393e3"
+            "sha256": "15c19134ac66de856ee1d38576534ecdef0cbb862f2ffaa4183eec381babc081"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -110,6 +110,14 @@
             ],
             "index": "pypi",
             "version": "==1.1.1"
+        },
+        "flask-pymongo": {
+            "hashes": [
+                "sha256:620eb02dc8808a5fcb90f26cab6cba9d6bf497b15032ae3ca99df80366e33314",
+                "sha256:8a9577a2c6d00b49f21cb5a5a8d72561730364a2d745551a85349ab02f86fc73"
+            ],
+            "index": "pypi",
+            "version": "==2.3.0"
         },
         "html5lib": {
             "hashes": [
@@ -486,6 +494,13 @@
             "index": "pypi",
             "version": "==3.10.1"
         },
+        "pypi": {
+            "hashes": [
+                "sha256:f014c87f871c2143ff613d9d13a59cc8ab8309b048754c27da8c58b21de2c10d"
+            ],
+            "index": "pypi",
+            "version": "==2.1"
+        },
         "pyrsistent": {
             "hashes": [
                 "sha256:cdc7b5e3ed77bed61270a47d35434a30617b9becdf2478af76ad2c6ade307280"
@@ -684,10 +699,10 @@
         },
         "zipp": {
             "hashes": [
-                "sha256:12248a63bbdf7548f89cb4c7cda4681e537031eda29c02ea29674bc6854460c2",
-                "sha256:7c0f8e91abc0dc07a5068f315c52cb30c66bfbc581e5b50704c8a2f6ebae794a"
+                "sha256:aa36550ff0c0b7ef7fa639055d797116ee891440eac1a56f378e2d3179e0320b",
+                "sha256:c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96"
             ],
-            "version": "==3.0.0"
+            "version": "==3.1.0"
         }
     },
     "develop": {

@@ -1,5 +1,6 @@
 from flask import Flask, redirect, render_template
-import scrape_mars, pymongo  # Mongo will be used in python.
+import scrape_mars
+import pymongo 
 
 # getting Flask
 

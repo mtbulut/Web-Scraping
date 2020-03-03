@@ -20,6 +20,8 @@ nbconvert = "*"
 flask = "*"
 pymongo = "*"
 pylint = "*"
+flask-pymongo = "*"
+pypi = "*"
 
 [requires]
 python_version = "3.7"

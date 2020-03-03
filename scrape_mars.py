@@ -168,16 +168,18 @@ Hemisphere_image_url
 
 print("=======================================================")
 
-all_mars_data = {
-    "Latest_News_Title": latest_title,
-    "Latest_Paragraph": latest_paragraph,
-    " Featured_Image": all_mars_image_url,
-    " Mars_Weather": mars_weather,
-    "Mars_Facts": Mars_Facts_df,
-    "Hemisphares_Pages": Hemisphere_image_url,
-}
+def scrape():
+    mars_data = {
+        "Latest_News_Title": latest_title,
+        "Latest_Paragraph": latest_paragraph,
+        " Featured_Image": all_mars_image_url,
+        " Mars_Weather": mars_weather,
+        "Mars_Facts": Mars_Facts_df,
+        "Hemisphares_Pages": image_url,
+    }
+    return(mars_data)
 
-print(all_mars_data)
+
 
 
 # In[15]:
