@@ -10,16 +10,17 @@
         <!-- title with scrape button -->
         <div class="jumbotron text-center">
             <h1>Mission to Mars</h1>
-            <a class="btn btn-primary" href="/scrape" role="button">Scrape New Dataaaa</a>
+            <a class="btn btn-primary" href="/scrape" role="button">Scrape New Data</a>
         </div>
 
         <br>
 
-        <!-- news title with snippet --><div class="container-fluid">
+        <!-- news title with snippet -->
+        <div class="container-fluid">
             <div class="col-8" style="padding: 2%;">
                 <h3>Mars News</h3>
-                <h4>{{ mars.news_title }}</h4>
-                <p>{{ mars.news_snippet }}</p>
+                <h4>{{ mars.Latest_News_Title }}</h4>
+                <p>{{ mars.Latest_Paragraph }}</p>
             </div>
         </div>
 
@@ -32,7 +33,7 @@
                 <div class="col-md-8">
                   <h2>Featured Mars Image</h2>
                     <!-- if images is False/None/non-existent, then default to error message -->
-                    <img src="{{mars.featured_img_url}}" class="img-responsive" width = "100%">
+                    <img src="{{mars.Featured_Image}}" class="img-responsive" width = "100%">
                 </div>
                 <div class="col-md-4">
                   <!-- Mars Weather Mars Facts -->
@@ -40,11 +41,11 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <h4>Mars Weather</h4>
-                                <p>{{mars.mars_weather}}</p>
+                                <p>{{mars.Mars_Weather}}</p>
                                 <br>
                                 <h4>Mars Facts</h4>
                                 <div text-align="center">
-                                {{mars.mars_facts| safe}} 
+                                {{mars.Mars_Facts| safe}} 
                                 </div>
                             </div>
                         </div>
@@ -62,13 +63,13 @@
         </div>
         
         <div class="card-deck">
-            {% for hemisphere in mars.hemispheres %}
+            {% for hemisphere in mars.Hemisphares_Pages %}
                 <div class="card" style="width: 32rem;">
                     <div class="thumbnail">
-                        <img src="{{hemisphere.url}}" class="card-img-top" >
+                        <img src="{{Hemisphares_Pages.url}}" class="card-img-top" >
                     </div>
                     <div class="card-body">
-                    <h5 class="card-title">{{hemisphere.title}}</h5>
+                    <h5 class="card-title">{{Hemisphares_Pages.title}}</h5>
                     </div>
                     <br>
                 </div>

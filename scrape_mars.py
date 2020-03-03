@@ -8,8 +8,8 @@
 import pandas as pd
 import time
 from bs4 import BeautifulSoup
-import requests 
-from selenium import webdriver 
+import requests
+from selenium import webdriver
 
 
 #  # Step 1 - Scraping
@@ -30,10 +30,10 @@ html_text = driver.page_source
 soup = BeautifulSoup(html_text, "html.parser")
 
 latest_title = soup.find("div", class_="content_title").text
-print(f'The latest Title: {latest_title}')
+print(f"The latest Title: {latest_title}")
 
 latest_paragraph = soup.find("div", class_="article_teaser_body")
-print(f'The latest paragraph: {latest_paragraph}')
+print(f"The latest paragraph: {latest_paragraph}")
 
 
 # ### JPL Mars Space Images - Featured Image
@@ -75,7 +75,9 @@ all_mars_image_url
 mars_weather_url = "https://twitter.com/marswxreport?lang=en"
 html_text = requests.get(mars_weather_url).text
 soup = BeautifulSoup(html_text, "html.parser")
-mars_weather = soup.find('p','TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').text
+mars_weather = soup.find(
+    "p", "TweetTextSize TweetTextSize--normal js-tweet-text tweet-text"
+).text
 mars_weather
 
 
@@ -111,7 +113,7 @@ Mars_Hemispehers_URL = "https://astrogeology.usgs.gov/search/results?q=hemispher
 driver.get(Mars_Hemispehers_URL)
 html_text = driver.page_source
 soup = BeautifulSoup(html_text, "html.parser")
-all_names_hemispeher = soup.find_all('h3')
+all_names_hemispeher = soup.find_all("h3")
 for all_name in [name.text for name in all_names_hemispeher]:
     print(all_name)
 
@@ -119,7 +121,7 @@ for all_name in [name.text for name in all_names_hemispeher]:
 # In[11]:
 
 
-all_picture_path = [e.a['href'] for e in soup.find_all('div','description')]
+all_picture_path = [e.a["href"] for e in soup.find_all("div", "description")]
 all_picture_path
 for path in all_picture_path:
     print(path)
@@ -130,11 +132,14 @@ for path in all_picture_path:
 
 whole_image_link = []
 URL_a = "https://astrogeology.usgs.gov"
-[ whole_image_link.append(URL_a + all_picture_path[i] ) for i in range(len(all_picture_path))]
+[
+    whole_image_link.append(URL_a + all_picture_path[i])
+    for i in range(len(all_picture_path))
+]
 i = 0
 for link in whole_image_link:
-    print(f'{[name.text for name in all_names_hemispeher][i]}:{link}')
-    i +=1
+    print(f"{[name.text for name in all_names_hemispeher][i]}:{link}")
+    i += 1
 
 
 # In[13]:
@@ -145,9 +150,9 @@ for i in range(len(whole_image_link)):
     driver.get(whole_image_link[i])
     html_text = driver.page_source
     soup = BeautifulSoup(html_text, "html.parser")
-    
-    image_url.append(URL_a + soup.find_all("img",class_="wide-image")[0]["src"])
-image_url    
+
+    image_url.append(URL_a + soup.find_all("img", class_="wide-image")[0]["src"])
+image_url
 
 
 # In[14]:
@@ -157,20 +162,19 @@ Hemisphere_image_url = []
 for i in range(len(image_url)):
     hemi_dict = {}
     hemi_dict["title"] = all_names_hemispeher[i].text
-    hemi_dict['url'] = image_url[i]
+    hemi_dict["url"] = image_url[i]
     Hemisphere_image_url.append(hemi_dict)
-Hemisphere_image_url    
+Hemisphere_image_url
 
-print('=======================================================')
+print("=======================================================")
 
 all_mars_data = {
-    "Latest News Title" : latest_title,
-    "Latest Paragraph" : latest_paragraph, 
-    " Featured Image" : all_mars_image_url,
-    " Mars Weather": mars_weather,
-    "Mars Facts": Mars_Facts_df,
-    "Hemisphares Pages": Hemisphere_image_url
-
+    "Latest_News_Title": latest_title,
+    "Latest_Paragraph": latest_paragraph,
+    " Featured_Image": all_mars_image_url,
+    " Mars_Weather": mars_weather,
+    "Mars_Facts": Mars_Facts_df,
+    "Hemisphares_Pages": Hemisphere_image_url,
 }
 
 print(all_mars_data)
@@ -180,4 +184,3 @@ print(all_mars_data)
 
 
 # it is done finally...
-
