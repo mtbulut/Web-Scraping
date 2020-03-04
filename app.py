@@ -13,8 +13,9 @@ db = client.mars_db
 
 @app.route("/")
 def index():
-    mars_data = db.marsdata.find_one()
+    
     mars_data = scrape_mars.scrape()
+    mars_data = db.marsdata.find_one()
     return render_template("index.html", mars=mars_data)
 
 

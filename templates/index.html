@@ -33,7 +33,7 @@
                 <div class="col-md-8">
                   <h2>Featured Mars Image</h2>
                     <!-- if images is False/None/non-existent, then default to error message -->
-                    <img src="{{mars.Featured_Image}}" class="img-responsive" width = "100%">
+                    <img src="{{ mars.Featured_Image }}" class="img-responsive" width = "100%">
                 </div>
                 <div class="col-md-4">
                   <!-- Mars Weather Mars Facts -->
@@ -66,10 +66,10 @@
             {% for hemisphere in mars.Hemisphares_Pages %}
                 <div class="card" style="width: 32rem;">
                     <div class="thumbnail">
-                        <img src="{{Hemisphares_Pages.url}}" class="card-img-top" >
+                        <img src="{{hemisphere.url}}" class="card-img-top" >
                     </div>
                     <div class="card-body">
-                    <h5 class="card-title">{{Hemisphares_Pages.title}}</h5>
+                    <h5 class="card-title">{{hemisphere.title}}</h5>
                     </div>
                     <br>
                 </div>

@@ -32,7 +32,7 @@ soup = BeautifulSoup(html_text, "html.parser")
 latest_title = soup.find("div", class_="content_title").text
 print(f"The latest Title: {latest_title}")
 
-latest_paragraph = soup.find("div", class_="article_teaser_body")
+latest_paragraph = soup.find("div", class_="article_teaser_body").text
 print(f"The latest paragraph: {latest_paragraph}")
 
 
@@ -172,10 +172,10 @@ def scrape():
     mars_data = {
         "Latest_News_Title": latest_title,
         "Latest_Paragraph": latest_paragraph,
-        " Featured_Image": all_mars_image_url,
-        " Mars_Weather": mars_weather,
-        "Mars_Facts": Mars_Facts_df,
-        "Hemisphares_Pages": image_url,
+        "Featured_Image": all_mars_image_url,
+        "Mars_Weather": mars_weather,
+        "Mars_Facts": Mars_Facts_df.to_html(),
+        "Hemisphares_Pages": Hemisphere_image_url
     }
     return(mars_data)
 
