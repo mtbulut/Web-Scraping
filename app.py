@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 CONN = "mongodb://localhost:27017"
 client = pymongo.MongoClient(CONN)
-db = client.mars_info_db
+db = client.mars_db
 
 
 @app.route("/")
